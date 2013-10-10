@@ -84,7 +84,7 @@ void MemoryManager_free(void* ptr) {
 #endif
 
 #ifndef MEMORYMANAGER_MEMORYSIZE
-#define MEMORYMANAGER_MEMORYSIZE 	1024
+#define MEMORYMANAGER_MEMORYSIZE 	2048
 #endif
 
 #define MEMORYMANAGER_BLOCKCOUNT	(MEMORYMANAGER_MEMORYSIZE/MEMORYMANAGER_BLOCKSIZE)
@@ -221,11 +221,6 @@ void* MemoryManager_realloc(void* ptr, uint32_t size) {
 		}
 
 	}
-
-
-	// XXX: improve this as it is inefficient
-	//MemoryManager_free(ptr);
-	//return MemoryManager_malloc(size);
 }
 
 void MemoryManager_free(void* ptr) {
